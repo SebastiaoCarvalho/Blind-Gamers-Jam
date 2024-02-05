@@ -10,12 +10,14 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField] private float speed = 5f, cameraSpeed = 5f;
-    [SerializeField] private InputActionReference movementAction, cameraAction;
+    [SerializeField] private InputActionReference movementAction, cameraAction, dogCallAction, dogFindAction;
+    private GameObject dog;
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        dog = GameObject.Find("GuideDog");
     }
 
     // Update is called once per frame
@@ -29,8 +31,26 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector3(movementInput.x * speed, rb.velocity.y, movementInput.y * speed);
         /* float rotation = Math.Sign(cameraAction.action.ReadValue<float>()); */
         float rotation = cameraAction.action.ReadValue<float>();
-        Debug.Log(rotation);
+        /* Debug.Log(rotation); */
         transform.Rotate(Vector3.up, rotation * cameraSpeed);
-        
     }
+
+    private void OnEnable() {
+        dogCallAction.action.performed += DogCallAction;
+        dogFindAction.action.performed += DogFindAction;
+    }
+
+    private void OnDisable() {
+        dogCallAction.action.performed -= DogCallAction;
+        dogFindAction.action.performed -= DogFindAction;
+    }
+
+    private void DogCallAction(InputAction.CallbackContext obj) {
+        dog.GetComponent<Dog>().HearCall();
+    }
+    
+    private void DogFindAction(InputAction.CallbackContext obj) {
+        dog.GetComponent<Dog>().FindClue();
+    }
+
 }
