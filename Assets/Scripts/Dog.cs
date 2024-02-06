@@ -17,7 +17,7 @@ public class Dog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentAction?.execute();
+        if (currentAction != null && ! currentAction.IsDone) currentAction.execute();
     }
 
     public void HearCall() {

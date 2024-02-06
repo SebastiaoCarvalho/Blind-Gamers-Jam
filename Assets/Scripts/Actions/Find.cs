@@ -2,26 +2,32 @@ using UnityEngine;
 using UnityEngine.AI;
 class Find : Action
 {
-    NavMeshAgent character;
+    private NavMeshAgent character;
     public Find(NavMeshAgent character)
     {
         this.character = character;
     }
-    public override void execute()
+    public override void execute() // FIXME: improve to only calculate once or x times instead of runtime
     {
         GameObject[] clues = GameObject.FindGameObjectsWithTag("Clue");
+        Debug.Log(clues.Length + " clues found");
         GameObject nearestClue = null;
         float nearestDistance = Mathf.Infinity;
-        foreach (GameObject clue in clues) // FIXME; search by closest in navsmesh
+        foreach (GameObject clue in clues)
         {
-            float distance = GetDistanceToTarget(character.transform.position, clue.transform.position);
+            var tmpPosition = character.transform.position;
+            tmpPosition.y = character.transform.position.y;
+
+            float distance = GetDistanceToTarget(character.transform.position, tmpPosition);
+
             if (distance < nearestDistance)
             {
                 nearestClue = clue;
                 nearestDistance = distance;
             }
         }
-        character.SetDestination(nearestClue.transform.position);
+        if (nearestClue != null) character.SetDestination(nearestClue.transform.position);
+        else Debug.Log("No clues found");
         isDone = true;
     }
 
@@ -31,6 +37,7 @@ class Find : Action
 
             NavMeshPath result = new NavMeshPath();
             var r = character.CalculatePath(targetPosition, result);
+            if (!r) Debug.Log("No path found!");
             if (r == true)
             {
                 var currentPosition = originalPosition;

@@ -19,6 +19,7 @@ class GoToOwner : Action
         character.SetDestination(owner.transform.position);
         if (Vector3.Distance(character.transform.position, owner.transform.position) < radius)
         {
+            character.isStopped = true;
             isDone = true;
         }
     }
