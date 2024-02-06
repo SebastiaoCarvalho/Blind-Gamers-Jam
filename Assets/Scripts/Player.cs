@@ -26,12 +26,15 @@ public class Player : MonoBehaviour
         
     }
 
-    private void FixedUpdate() { // FIXME : rotatated object not moving to the right direction -> see yt video
+    private void FixedUpdate() {
         Vector2 movementInput = movementAction.action.ReadValue<Vector2>();
-        rb.velocity = new Vector3(movementInput.x * speed, rb.velocity.y, movementInput.y * speed);
-        /* float rotation = Math.Sign(cameraAction.action.ReadValue<float>()); */
+
+        // move according to transform direction
+        Vector3 movement3D = (movementInput.x * transform.right) + (movementInput.y * transform.forward);
+        movement3D.Normalize();
+
+        rb.velocity = new Vector3(movement3D.x  * speed, rb.velocity.y, movement3D.z * speed);
         float rotation = cameraAction.action.ReadValue<float>();
-        /* Debug.Log(rotation); */
         transform.Rotate(Vector3.up, rotation * cameraSpeed);
     }
 

@@ -847,6 +847,10 @@ PrefabInstance:
       propertyPath: dogFindAction
       value: 
       objectReference: {fileID: 2221795255289842181, guid: e4f072d4beb45a2458e0d378f53c6b75, type: 3}
+    - target: {fileID: 4069645535319591992, guid: 26217551e4d11334695b8711384850ee, type: 3}
+      propertyPath: orientation
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4871725552356994821, guid: 26217551e4d11334695b8711384850ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 156
