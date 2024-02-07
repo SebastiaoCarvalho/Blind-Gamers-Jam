@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2849961576284529559, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 158.37312
+      value: 151
       objectReference: {fileID: 0}
     - target: {fileID: 2849961576284529559, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: m_LocalPosition.y
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2849961576284529559, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 112
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 2849961576284529559, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7176,7 +7176,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1942552902714920487, guid: 26217551e4d11334695b8711384850ee, type: 3}
       propertyPath: cameraSpeed
-      value: 30
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1942552902714920487, guid: 26217551e4d11334695b8711384850ee, type: 3}
       propertyPath: dogCallAction

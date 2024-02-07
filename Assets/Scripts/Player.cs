@@ -67,12 +67,10 @@ public class Player : MonoBehaviour
                 initialRotation -= 360;
             }
         }
-        Debug.Log("target: " + rotationTarget + " current: " + transform.rotation.eulerAngles.y + " rotation: " + rotation);
         
         if (transform.rotation.eulerAngles.y != rotationTarget) {
             float start = transform.rotation.eulerAngles.y == 0 && initialRotation == 360 ? 360 : transform.rotation.eulerAngles.y;
             float end = rotationTarget == 0 ? (transform.rotation.eulerAngles.y <= 90 ? 0 : 360) : rotationTarget;
-            Debug.Log("start: " + start + " end: " + end);
             transform.rotation = Quaternion.Euler(0, Mathf.MoveTowards(start, end, cameraSpeed * Time.fixedDeltaTime), 0);
         }
         else {

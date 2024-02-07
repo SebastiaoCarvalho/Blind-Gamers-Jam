@@ -12,6 +12,7 @@ public class Dog : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        currentAction = new Follow(agent); // until I make a behavior tree, the dog will follow the player by default
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class Dog : MonoBehaviour
     }
 
     public void HearCall() {
-        currentAction = new GoToOwner(agent);
+        currentAction = new Follow(agent);
     }
 
     public void FindClue() {
