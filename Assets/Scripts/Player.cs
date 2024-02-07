@@ -9,15 +9,22 @@ using UnityEngine.InputSystem.Controls;
 public class Player : MonoBehaviour
 {
 
-    [SerializeField] private float speed = 5f, cameraSpeed = 5f;
+    [SerializeField] private float speed = 5f, cameraSpeed = 20;
     [SerializeField] private InputActionReference movementAction, cameraAction, dogCallAction, dogFindAction;
     private GameObject dog;
     private Rigidbody rb;
+    private float rotationTarget; // target rotation position
+    private float initialRotation; // initial rotation position
+    private float rotationMovement; // sign of camera rotation
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         dog = GameObject.Find("GuideDog");
+        initialRotation = transform.rotation.eulerAngles.y;
+        rotationTarget = transform.rotation.eulerAngles.y;
+        rotationMovement = 0;
     }
 
     // Update is called once per frame
@@ -27,6 +34,7 @@ public class Player : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        // Player movement
         Vector2 movementInput = movementAction.action.ReadValue<Vector2>();
 
         // move according to transform direction
@@ -34,8 +42,42 @@ public class Player : MonoBehaviour
         movement3D.Normalize();
 
         rb.velocity = new Vector3(movement3D.x  * speed, rb.velocity.y, movement3D.z * speed);
+
+        // Camera rotation
+        Rotation();
+    }
+
+    private void Rotation() {
         float rotation = cameraAction.action.ReadValue<float>();
-        transform.Rotate(Vector3.up, rotation * cameraSpeed);
+
+        rotation = Math.Sign(rotation);
+        if (rotation != rotationMovement && rotation != 0) {
+            if (rotationMovement != 0) {
+                initialRotation = rotationTarget;
+            }
+            else initialRotation = transform.rotation.eulerAngles.y;
+            rotationMovement = rotation;
+            rotationTarget = initialRotation + rotation * 90;
+            if (rotationTarget < 0) { 
+                rotationTarget += 360;
+                initialRotation += 360;
+            }
+            else if (rotationTarget >= 360) {
+                rotationTarget -= 360;
+                initialRotation -= 360;
+            }
+        }
+        Debug.Log("target: " + rotationTarget + " current: " + transform.rotation.eulerAngles.y + " rotation: " + rotation);
+        
+        if (transform.rotation.eulerAngles.y != rotationTarget) {
+            float start = transform.rotation.eulerAngles.y == 0 && initialRotation == 360 ? 360 : transform.rotation.eulerAngles.y;
+            float end = rotationTarget == 0 ? (transform.rotation.eulerAngles.y <= 90 ? 0 : 360) : rotationTarget;
+            Debug.Log("start: " + start + " end: " + end);
+            transform.rotation = Quaternion.Euler(0, Mathf.MoveTowards(start, end, cameraSpeed * Time.fixedDeltaTime), 0);
+        }
+        else {
+            rotationMovement = 0;
+        }
     }
 
     private void OnEnable() {

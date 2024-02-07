@@ -7175,6 +7175,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1942552902714920487, guid: 26217551e4d11334695b8711384850ee, type: 3}
+      propertyPath: cameraSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942552902714920487, guid: 26217551e4d11334695b8711384850ee, type: 3}
       propertyPath: dogCallAction
       value: 
       objectReference: {fileID: 6449091624510084741, guid: e4f072d4beb45a2458e0d378f53c6b75, type: 3}
