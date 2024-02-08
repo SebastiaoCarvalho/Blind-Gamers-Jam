@@ -10,8 +10,9 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField] private float speed = 5f, cameraSpeed = 20;
-    [SerializeField] private InputActionReference movementAction, cameraAction, dogCallAction, dogFindAction;
+    [SerializeField] private InputActionReference movementAction, cameraAction, dogCallAction, dogFindAction, interactAction;
     private GameObject dog;
+    private List<GameObject> interactibles = new List<GameObject>();
     private Rigidbody rb;
     private float rotationTarget; // target rotation position
     private float initialRotation; // initial rotation position
@@ -81,11 +82,13 @@ public class Player : MonoBehaviour
     private void OnEnable() {
         dogCallAction.action.performed += DogCallAction;
         dogFindAction.action.performed += DogFindAction;
+        interactAction.action.performed += InteractAction;
     }
 
     private void OnDisable() {
         dogCallAction.action.performed -= DogCallAction;
         dogFindAction.action.performed -= DogFindAction;
+        interactAction.action.performed -= InteractAction;
     }
 
     private void DogCallAction(InputAction.CallbackContext obj) {
@@ -94,6 +97,28 @@ public class Player : MonoBehaviour
     
     private void DogFindAction(InputAction.CallbackContext obj) {
         dog.GetComponent<Dog>().FindClue();
+    }
+    
+    private void InteractAction(InputAction.CallbackContext obj) {
+        if (interactibles.Count == 0) return;
+        GameObject closest = interactibles[0];
+        float minDistance = Vector3.Distance(transform.position, closest.transform.position);
+        foreach (GameObject interactible in interactibles) {
+            float distance = Vector3.Distance(transform.position, interactible.transform.position);
+            if (distance < minDistance) {
+                minDistance = distance;
+                closest = interactible;
+            }
+        }
+        closest.GetComponent<Interactible>().Interact();
+    }
+
+    public void AddInteractible(GameObject interactible) {
+        interactibles.Add(interactible);
+    }
+
+    public void RemoveInteractible(GameObject interactible) {
+        interactibles.Remove(interactible);
     }
 
 }
