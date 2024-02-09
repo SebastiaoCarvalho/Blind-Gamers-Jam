@@ -6,7 +6,7 @@ public class Interactable : MonoBehaviour
 {
     private GameObject player;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         this.player = GameObject.Find("Player");
     }
@@ -17,7 +17,7 @@ public class Interactable : MonoBehaviour
         
     }
 
-    public virtual void Interact() { // override ub««in children classes
+    public virtual void Interact() { // override in children classes
         
     }
 

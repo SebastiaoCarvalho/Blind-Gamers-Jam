@@ -317,6 +317,94 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "SequenceGameActions",
+            "id": "bc3ee64b-e9f3-4b99-91cc-caaa23531834",
+            "actions": [
+                {
+                    "name": "Sound1",
+                    "type": "Button",
+                    "id": "6876487a-32de-42b5-b3af-06606da2506d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sound2",
+                    "type": "Button",
+                    "id": "dd924fcd-ad01-4ee0-a549-82937f4ef220",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sound3",
+                    "type": "Button",
+                    "id": "3001b5b9-f1ce-4cc0-8ea3-460936fca7b9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sound4",
+                    "type": "Button",
+                    "id": "8bdcfc7e-41ee-4ba0-9d8d-bc1046138955",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9ede2f60-2b4f-484d-bd55-35a6331a5c9e",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sound1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4924a800-e4fb-4d4f-9a9a-0ff49e753795",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sound2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "73ef3c2e-3c98-4493-ad35-36adaafccdd0",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sound3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8ced7c81-3386-4722-bce8-5f71a3d968e4",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sound4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

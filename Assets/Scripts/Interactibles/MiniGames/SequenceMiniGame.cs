@@ -4,7 +4,7 @@ using UnityEngine;
 public class SequenceMiniGame : MiniGame {
     private List<Sound> solution;
 
-    private SequenceMiniGame() {
+    public SequenceMiniGame(MiniGameInteractable interactable) : base(interactable) {
         solution = new List<Sound>();
         int sequenceLength = 4;
         string[] sounds = {"A", "B", "C", "D"};
@@ -15,16 +15,22 @@ public class SequenceMiniGame : MiniGame {
 
     }
 
-    public override void Play()
+    public override void Play() // TODO : Later should play each sound in sequence
     {
-        
+        foreach (Sound sound in solution) {
+            sound.Play();
+        }
     }
 
     public bool TrySound(Sound sound) {
         if (sound == solution[0]) {
             solution.RemoveAt(0);
+            if (solution.Count == 0) {
+                WinGame();
+            }
             return true;
         }
+        EndGame();
         return false;
     }
 }

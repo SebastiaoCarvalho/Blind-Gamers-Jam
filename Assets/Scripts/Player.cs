@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float speed = 5f, cameraSpeed = 20;
     [SerializeField] private InputActionReference movementAction, cameraAction, dogCallAction, dogFindAction, interactAction;
+    private InputActionMap soundMap;
     private GameObject dog;
     private List<GameObject> interactables = new List<GameObject>();
     private Rigidbody rb;
@@ -83,12 +84,19 @@ public class Player : MonoBehaviour
         dogCallAction.action.performed += DogCallAction;
         dogFindAction.action.performed += DogFindAction;
         interactAction.action.performed += InteractAction;
+        soundMap = GameObject.Find("PlayerInput").GetComponent<PlayerInput>().actions.FindActionMap("SequenceGameActions");
+        for (int i = 0; i < soundMap.actions.Count; i++) {
+            soundMap.actions[i].performed += PlaySound;
+        }
     }
 
     private void OnDisable() {
         dogCallAction.action.performed -= DogCallAction;
         dogFindAction.action.performed -= DogFindAction;
         interactAction.action.performed -= InteractAction;
+        for (int i = 0; i < soundMap.actions.Count; i++) {
+            soundMap.actions[i].performed -= PlaySound;
+        }
     }
 
     private void DogCallAction(InputAction.CallbackContext obj) {
@@ -119,6 +127,17 @@ public class Player : MonoBehaviour
 
     public void RemoveInteractible(GameObject interactible) {
         interactables.Remove(interactible);
+    }
+
+    public void PlaySound(InputAction.CallbackContext obj) {
+        int i = obj.action.name[^1] - '1'; // Convert last character of action name to int
+        Debug.Log(obj.action.name + " " + i);
+        if (interactables.Count == 0) return;
+        string [] sounds = {"A", "B", "C", "D"};
+        string sound = sounds[i];
+        Debug.Log("Playing sound " + sound);
+        MiniGameInteractable miniGameInteractable = interactables[0].GetComponent<MiniGameInteractable>();
+        miniGameInteractable.TrySound(sound);
     }
 
 }
