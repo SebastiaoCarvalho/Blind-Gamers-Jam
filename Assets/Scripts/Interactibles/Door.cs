@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Door : Interactible {
+public class Door : Interactable {
 
     private bool isOpen = false;
     public override void Interact()

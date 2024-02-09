@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 5f, cameraSpeed = 20;
     [SerializeField] private InputActionReference movementAction, cameraAction, dogCallAction, dogFindAction, interactAction;
     private GameObject dog;
-    private List<GameObject> interactibles = new List<GameObject>();
+    private List<GameObject> interactables = new List<GameObject>();
     private Rigidbody rb;
     private float rotationTarget; // target rotation position
     private float initialRotation; // initial rotation position
@@ -100,25 +100,25 @@ public class Player : MonoBehaviour
     }
     
     private void InteractAction(InputAction.CallbackContext obj) {
-        if (interactibles.Count == 0) return;
-        GameObject closest = interactibles[0];
+        if (interactables.Count == 0) return;
+        GameObject closest = interactables[0];
         float minDistance = Vector3.Distance(transform.position, closest.transform.position);
-        foreach (GameObject interactible in interactibles) {
+        foreach (GameObject interactible in interactables) {
             float distance = Vector3.Distance(transform.position, interactible.transform.position);
             if (distance < minDistance) {
                 minDistance = distance;
                 closest = interactible;
             }
         }
-        closest.GetComponent<Interactible>().Interact();
+        closest.GetComponent<Interactable>().Interact();
     }
 
     public void AddInteractible(GameObject interactible) {
-        interactibles.Add(interactible);
+        interactables.Add(interactible);
     }
 
     public void RemoveInteractible(GameObject interactible) {
-        interactibles.Remove(interactible);
+        interactables.Remove(interactible);
     }
 
 }
