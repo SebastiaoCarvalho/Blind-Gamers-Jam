@@ -9,6 +9,7 @@ public class MiniGameInteractable : Interactable {
         base.Start();
         miniGame = new SequenceMiniGame(this);
     }
+
     public override void Interact() {
         Debug.Log("Interacting with minigame");
         // activate minigame interaction
@@ -23,7 +24,10 @@ public class MiniGameInteractable : Interactable {
     }
 
     public void TrySound(string sound) {
-        if (((SequenceMiniGame) miniGame).TrySound(new Sound(sound))) { // FIXME: need to work on a better solution later
+        SequenceMiniGame sequenceMiniGame = (SequenceMiniGame) miniGame; // FIXME: need to work on a better solution later
+        Sound soundObj = new Sound(sound, gameObject.GetComponent<AudioSource>());
+        soundObj.Play();
+        if (sequenceMiniGame.TrySound(soundObj)) {
             Debug.Log("Correct sound");
         } else {
             Debug.Log("Incorrect sound");
