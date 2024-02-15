@@ -19,6 +19,6 @@ public class MiniGame {
 
     protected void WinGame() {
         Debug.Log("Winning game");
-        interactable.EndGame();
+        interactable.WinGame();
     }
 }

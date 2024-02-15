@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private float rotationTarget; // target rotation position
     private float initialRotation; // initial rotation position
+    private float movement; // sign of player movement
     private float rotationMovement; // sign of camera rotation
 
     // Start is called before the first frame update
@@ -37,16 +38,21 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate() {
         // Player movement
+        Movement();
+
+        // Camera rotation
+        Rotation();
+    }
+
+    private void Movement() {
         Vector2 movementInput = movementAction.action.ReadValue<Vector2>();
+        /* movementInput = new Vector2(Mathf.Sign(movementInput.x), Mathf.Sign(movementInput.y)); */
 
         // move according to transform direction
         Vector3 movement3D = (movementInput.x * transform.right) + (movementInput.y * transform.forward);
         movement3D.Normalize();
 
         rb.velocity = new Vector3(movement3D.x  * speed, rb.velocity.y, movement3D.z * speed);
-
-        // Camera rotation
-        Rotation();
     }
 
     private void Rotation() {

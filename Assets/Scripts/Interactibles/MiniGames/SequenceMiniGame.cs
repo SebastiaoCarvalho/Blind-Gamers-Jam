@@ -19,7 +19,7 @@ public class SequenceMiniGame : MiniGame {
 
     }
 
-    public override async void Play() // TODO : Later should play each sound in sequence
+    public override async void Play()
     {
         delay_time = 0;
         foreach (Sound sound in solution) {

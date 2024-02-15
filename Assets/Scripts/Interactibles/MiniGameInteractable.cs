@@ -4,9 +4,15 @@ using UnityEngine.InputSystem;
 public class MiniGameInteractable : Interactable {
 
     public MiniGame miniGame;
+    public Key key;
+    public Door door;
+    public GameObject doorObject;
 
     protected override void Start() {
         base.Start();
+        door = doorObject.GetComponent<Door>();
+        Lock lockk = new Lock("key", door);
+        key = new Key("key", lockk);
         miniGame = new SequenceMiniGame(this);
     }
 
@@ -21,6 +27,11 @@ public class MiniGameInteractable : Interactable {
     public void EndGame() {
         PlayerInput playerInput = GameObject.Find("PlayerInput").GetComponent<PlayerInput>();
         playerInput.SwitchCurrentActionMap("PlayerActions");
+    }
+
+    public void WinGame() {
+        door.UseKey(key.KeyName);
+        EndGame();
     }
 
     public void TrySound(string sound) {
