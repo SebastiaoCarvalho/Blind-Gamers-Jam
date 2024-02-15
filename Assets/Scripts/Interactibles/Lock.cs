@@ -5,6 +5,7 @@ public class Lock {
     public Lock(string key, Door door) {
         this.key = key;
         this.door = door;
+        door.AddLock(this);
     }
 
     public bool Unlock(string key) {

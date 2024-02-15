@@ -7,8 +7,11 @@ public class Door : Interactable {
     public List<Lock> locks = new List<Lock>();
     public override void Interact()
     {
-        if (locks.Count > 0) Debug.Log("Door is locked");
-        if (isOpen) gameObject.GetComponent<Rigidbody>().detectCollisions = false;
+        if (locks.Count > 0) {
+            Debug.Log("Door is locked");
+            return;
+        }
+        if (! isOpen) gameObject.GetComponent<Rigidbody>().detectCollisions = false;
         else gameObject.GetComponent<Rigidbody>().detectCollisions = true;
         isOpen = ! isOpen;
     }
