@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &1949774 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2849961576284529559, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
+  m_PrefabInstance: {fileID: 53574877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &28650992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,13 +300,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3165048565836201421, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5977996176658932438, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: m_Name
       value: GuideDog
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2849961576284529559, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2113222428}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
 --- !u!1001 &105974314
@@ -2053,6 +2065,7 @@ Transform:
   m_Children:
   - {fileID: 178100077}
   - {fileID: 1375185069}
+  - {fileID: 1941592343}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &493117069
@@ -6610,6 +6623,7 @@ GameObject:
   - component: {fileID: 1399684770}
   - component: {fileID: 1399684771}
   - component: {fileID: 1399684772}
+  - component: {fileID: 1399684773}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -6747,7 +6761,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399684765}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -6836,6 +6850,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1399684773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399684765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1001 &1406207950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9378,6 +9423,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3744791550812028575, guid: 1714f28e895039143a79b143eaf35504, type: 3}
   m_PrefabInstance: {fileID: 1919397749}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1941592342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1941592343}
+  - component: {fileID: 1941592344}
+  m_Layer: 0
+  m_Name: Song to find
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1941592343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941592342}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -30.88, y: 0.65, z: 33.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 489250149}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1941592344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941592342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -867016065
+      Data2: 1226640178
+      Data3: -2062192253
+      Data4: 501625546
+    Path: event:/Ambience/Ambience
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1961199908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9998,6 +10106,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3744791550812028575, guid: 1714f28e895039143a79b143eaf35504, type: 3}
   m_PrefabInstance: {fileID: 2104513103}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2113222427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113222428}
+  - component: {fileID: 2113222429}
+  m_Layer: 9
+  m_Name: Walk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2113222428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113222427}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1949774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2113222429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113222427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Untagged
+  EventReference:
+    Guid:
+      Data1: -1040187749
+      Data2: 1284647231
+      Data3: 133324182
+      Data4: 330842193
+    Path: event:/Sound Effects/Dog/Dog_Walk
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!1 &2114197798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8895046206834198074, guid: 26217551e4d11334695b8711384850ee, type: 3}
+  m_PrefabInstance: {fileID: 198598102549587492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2114197800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114197798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1001 &2138245681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10316,10 +10505,14 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2452308808770666547, guid: 26217551e4d11334695b8711384850ee, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8895046206834198074, guid: 26217551e4d11334695b8711384850ee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2114197800}
   m_SourcePrefab: {fileID: 100100000, guid: 26217551e4d11334695b8711384850ee, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

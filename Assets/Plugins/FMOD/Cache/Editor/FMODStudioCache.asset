@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: W:/Game Jams/Blind Gamers Jam/FMOD/Blind System/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638437033760000000
+  lastModified: 638437101380000000
   FileSizes:
   - Name: 
-    Value: 5081408
+    Value: 5097856
   Exists: 1
 --- !u!114 &-5113781548286856793
 MonoBehaviour:
@@ -65,13 +65,15 @@ MonoBehaviour:
   - {fileID: 772479201189512590}
   - {fileID: 4493833420981762868}
   - {fileID: 4969228935210611449}
+  - {fileID: 5223218572345572281}
+  - {fileID: 1223518538677463065}
   EditorParameters:
   - {fileID: 2918898153129922869}
   MasterBanks:
   - {fileID: -5445480984146715214}
   StringsBanks:
   - {fileID: 7274233178813816053}
-  cacheTime: 638437033760000000
+  cacheTime: 638437101380000000
   cacheVersion: 131616
 --- !u!114 &772479201189512590
 MonoBehaviour:
@@ -127,6 +129,33 @@ MonoBehaviour:
   - Running
   - Pause
   Exists: 1
+--- !u!114 &1223518538677463065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Dog/Dog_Walk 2
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Dog/Dog_Walk 2
+  Guid:
+    Data1: -1898585791
+    Data2: 1287522993
+    Data3: 1168605586
+    Data4: -2078128006
+  Banks:
+  - {fileID: -5445480984146715214}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2918898153129922869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,12 +203,12 @@ MonoBehaviour:
   Banks:
   - {fileID: -5445480984146715214}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: 948683232107290220}
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 50
   Length: 84395
 --- !u!114 &4969228935210611449
 MonoBehaviour:
@@ -208,6 +237,33 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &5223218572345572281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Dog/Dog_Walk
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Dog/Dog_Walk
+  Guid:
+    Data1: -1040187749
+    Data2: 1284647231
+    Data3: 133324182
+    Data4: 330842193
+  Banks:
+  - {fileID: -5445480984146715214}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &7274233178813816053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,8 +279,8 @@ MonoBehaviour:
   Path: W:/Game Jams/Blind Gamers Jam/FMOD/Blind System/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638437033760000000
+  lastModified: 638437101380000000
   FileSizes:
   - Name: 
-    Value: 1134
+    Value: 1248
   Exists: 1

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 790717292597102665}
   - component: {fileID: 3165048565836201421}
   - component: {fileID: 3073485995418563934}
+  - component: {fileID: 722352962937094826}
   m_Layer: 9
   m_Name: GuideDog
   m_TagString: Untagged
@@ -141,3 +142,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29054f97d99dbaf4b87b890e60baf270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &722352962937094826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5977996176658932438}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1040187749
+      Data2: 1284647231
+      Data3: 133324182
+      Data4: 330842193
+    Path: event:/Sound Effects/Dog/Dog_Walk
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
