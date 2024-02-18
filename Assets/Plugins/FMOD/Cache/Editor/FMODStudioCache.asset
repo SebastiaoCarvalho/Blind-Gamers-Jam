@@ -1,25 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5445480984146715214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: W:/Game Jams/Blind Gamers Jam/FMOD/Blind System/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638437101380000000
-  FileSizes:
-  - Name: 
-    Value: 5097856
-  Exists: 1
 --- !u!114 &-5113781548286856793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +26,26 @@ MonoBehaviour:
   - Running
   - Pause
   Exists: 1
+--- !u!114 &-2427819809493424900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD_Banks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638438534004501705
+  FileSizes:
+  - Name: 
+    Value: 1248
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,8 +59,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 7274233178813816053}
-  - {fileID: -5445480984146715214}
+  - {fileID: -2427819809493424900}
+  - {fileID: 3093370939182371372}
   EditorEvents:
   - {fileID: 772479201189512590}
   - {fileID: 4493833420981762868}
@@ -70,10 +70,10 @@ MonoBehaviour:
   EditorParameters:
   - {fileID: 2918898153129922869}
   MasterBanks:
-  - {fileID: -5445480984146715214}
+  - {fileID: 3093370939182371372}
   StringsBanks:
-  - {fileID: 7274233178813816053}
-  cacheTime: 638437101380000000
+  - {fileID: -2427819809493424900}
+  cacheTime: 638438534004501705
   cacheVersion: 131616
 --- !u!114 &772479201189512590
 MonoBehaviour:
@@ -94,7 +94,7 @@ MonoBehaviour:
     Data3: 1262585014
     Data4: 665533229
   Banks:
-  - {fileID: -5445480984146715214}
+  - {fileID: 3093370939182371372}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
     Data3: 1168605586
     Data4: -2078128006
   Banks:
-  - {fileID: -5445480984146715214}
+  - {fileID: 3093370939182371372}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -182,6 +182,24 @@ MonoBehaviour:
   - Running
   - Pause
   Exists: 1
+--- !u!114 &3093370939182371372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD_Banks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638438534004211596
+  FileSizes: []
+  Exists: 1
 --- !u!114 &4493833420981762868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +219,7 @@ MonoBehaviour:
     Data3: -2062192253
     Data4: 501625546
   Banks:
-  - {fileID: -5445480984146715214}
+  - {fileID: 3093370939182371372}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -229,7 +247,7 @@ MonoBehaviour:
     Data3: 1875185814
     Data4: 1092710493
   Banks:
-  - {fileID: -5445480984146715214}
+  - {fileID: 3093370939182371372}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -256,7 +274,7 @@ MonoBehaviour:
     Data3: 133324182
     Data4: 330842193
   Banks:
-  - {fileID: -5445480984146715214}
+  - {fileID: 3093370939182371372}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -264,23 +282,3 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
---- !u!114 &7274233178813816053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: W:/Game Jams/Blind Gamers Jam/FMOD/Blind System/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638437101380000000
-  FileSizes:
-  - Name: 
-    Value: 1248
-  Exists: 1
