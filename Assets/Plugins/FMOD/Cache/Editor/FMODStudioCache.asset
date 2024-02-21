@@ -1,6 +1,147 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5113781548286856793
+--- !u!114 &-8878558905951092643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Room_Reverb
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Room_Reverb
+  Guid:
+    Data1: -190391825
+    Data2: 1266961144
+    Data3: 944431530
+    Data4: 1765499952
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-8485759019400937649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Move/Turn Right
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Move/Turn Right
+  Guid:
+    Data1: -649720515
+    Data2: 1337119554
+    Data3: -1184753524
+    Data4: 1325655432
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6154572419447514172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Move/Player_Steps
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Move/Player_Steps
+  Guid:
+    Data1: 7752753
+    Data2: 1324144877
+    Data3: 1107596989
+    Data4: 897668139
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-4350097982119808508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Puzzle_Right
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Puzzle_Right
+  Guid:
+    Data1: -1517830563
+    Data2: 1143319767
+    Data3: 2043729537
+    Data4: 555742809
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4089720195970983749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: 
+  Guid:
+    Data1: -190391825
+    Data2: 1266961144
+    Data3: 944431530
+    Data4: 1765499952
+  Banks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-4084510478948261385
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,21 +151,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Game_State/Game_State
+  m_Name: parameter:/Room_Reverb/Room_Reverb
   m_EditorClassIdentifier: 
-  Name: Game_State
+  Name: Room_Reverb
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 3181260161
-    data2: 3862652361
+    data1: 871423786
+    data2: 1563027298
   Type: 2
   IsGlobal: 1
   Labels:
-  - Running
-  - Pause
+  - Dry
+  - Reverb
   Exists: 1
 --- !u!114 &-2427819809493424900
 MonoBehaviour:
@@ -41,11 +182,93 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638438534004501705
+  lastModified: 638441513815187446
   FileSizes:
   - Name: 
-    Value: 1248
+    Value: 1794
   Exists: 1
+--- !u!114 &-2347539336154349487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Puzzle_Up
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Puzzle_Up
+  Guid:
+    Data1: -1318071159
+    Data2: 1092026366
+    Data3: -1260782691
+    Data4: -758969277
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-490238686580069292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Room_Reverb
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Room_Reverb
+  Guid:
+    Data1: 176085247
+    Data2: 1197663147
+    Data3: -52679807
+    Data4: -1705311884
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4084510478948261385}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-143832683878341911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Puzzle_Left
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Puzzle_Left
+  Guid:
+    Data1: -332681404
+    Data2: 1195829188
+    Data3: 1759598223
+    Data4: -296414270
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,20 +285,31 @@ MonoBehaviour:
   - {fileID: -2427819809493424900}
   - {fileID: 3093370939182371372}
   EditorEvents:
-  - {fileID: 772479201189512590}
-  - {fileID: 4493833420981762868}
   - {fileID: 4969228935210611449}
   - {fileID: 5223218572345572281}
-  - {fileID: 1223518538677463065}
+  - {fileID: -4089720195970983749}
+  - {fileID: 143819560119788709}
+  - {fileID: -6154572419447514172}
+  - {fileID: -8485759019400937649}
+  - {fileID: 4630588740241739238}
+  - {fileID: -8878558905951092643}
+  - {fileID: -143832683878341911}
+  - {fileID: 5471074945958730914}
+  - {fileID: -4350097982119808508}
+  - {fileID: -2347539336154349487}
+  - {fileID: -490238686580069292}
+  - {fileID: 1425793682822263020}
+  - {fileID: 3003437729098058792}
   EditorParameters:
   - {fileID: 2918898153129922869}
+  - {fileID: 4864306591133516904}
   MasterBanks:
   - {fileID: 3093370939182371372}
   StringsBanks:
   - {fileID: -2427819809493424900}
-  cacheTime: 638438534004501705
+  cacheTime: 638441513815187446
   cacheVersion: 131616
---- !u!114 &772479201189512590
+--- !u!114 &143819560119788709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,51 +319,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Game_State
+  m_Name: event:/Sound Effects/Move/Turn Left
   m_EditorClassIdentifier: 
-  Path: event:/Ambience/Game_State
+  Path: event:/Sound Effects/Move/Turn Left
   Guid:
-    Data1: -58034366
-    Data2: 1101241130
-    Data3: 1262585014
-    Data4: 665533229
+    Data1: -1380670703
+    Data2: 1077719370
+    Data3: 224016793
+    Data4: -1047131837
   Banks:
   - {fileID: 3093370939182371372}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -5113781548286856793}
+  IsOneShot: 1
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &948683232107290220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Ambience/Game_State
-  m_EditorClassIdentifier: 
-  Name: Game_State
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3181260161
-    data2: 3862652361
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - Running
-  - Pause
-  Exists: 1
---- !u!114 &1223518538677463065
+--- !u!114 &1425793682822263020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,14 +346,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound Effects/Dog/Dog_Walk 2
+  m_Name: event:/UI/Puzzle_Wrong
   m_EditorClassIdentifier: 
-  Path: event:/Sound Effects/Dog/Dog_Walk 2
+  Path: event:/UI/Puzzle_Wrong
   Guid:
-    Data1: -1898585791
-    Data2: 1287522993
-    Data3: 1168605586
-    Data4: -2078128006
+    Data1: -1407851559
+    Data2: 1320429708
+    Data3: -1081531244
+    Data4: 1965970634
   Banks:
   - {fileID: 3093370939182371372}
   IsStream: 0
@@ -182,6 +389,33 @@ MonoBehaviour:
   - Running
   - Pause
   Exists: 1
+--- !u!114 &3003437729098058792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Puzzle_Win
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Puzzle_Win
+  Guid:
+    Data1: 2045415775
+    Data2: 1297211582
+    Data3: -2138728779
+    Data4: -2101160693
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3093370939182371372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,10 +431,36 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638438534004211596
+  lastModified: 638441513815172324
   FileSizes: []
   Exists: 1
---- !u!114 &4493833420981762868
+--- !u!114 &3632455084704461687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Game_State
+  m_EditorClassIdentifier: 
+  Name: Game_State
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3181260161
+    data2: 3862652361
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Running
+  - Pause
+  Exists: 1
+--- !u!114 &4630588740241739238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,9 +470,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Ambience
+  m_Name: event:/Music/Music
   m_EditorClassIdentifier: 
-  Path: event:/Ambience/Ambience
+  Path: event:/Music/Music
   Guid:
     Data1: -867016065
     Data2: 1226640178
@@ -224,10 +484,36 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 948683232107290220}
+  - {fileID: 3632455084704461687}
   MinDistance: 1
   MaxDistance: 50
-  Length: 84395
+  Length: 154666
+--- !u!114 &4864306591133516904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Room_Reverb
+  m_EditorClassIdentifier: 
+  Name: Room_Reverb
+  StudioPath: parameter:/Room_Reverb
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 871423786
+    data2: 1563027298
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Dry
+  - Reverb
+  Exists: 1
 --- !u!114 &4969228935210611449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,3 +568,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &5471074945958730914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Puzzle_Down
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Puzzle_Down
+  Guid:
+    Data1: -1406570150
+    Data2: 1258603908
+    Data3: 1912746127
+    Data4: -205077966
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
