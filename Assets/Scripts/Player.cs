@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     private float initialRotation; // initial rotation position
     private float movement; // sign of player movement
     private float rotationMovement; // sign of camera rotation
+    private bool walking = false; // switch for walking sound
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,18 @@ public class Player : MonoBehaviour
     private void Movement() {
         Vector2 movementInput = movementAction.action.ReadValue<Vector2>();
         /* movementInput = new Vector2(Mathf.Sign(movementInput.x), Mathf.Sign(movementInput.y)); */
+        if (movementInput != Vector2.zero) {
+            if (! walking) {
+                walking = true;
+                gameObject.GetComponent<StudioEventEmitter>().Play();
+            }
+        }
+        else {
+            if (walking) {
+                walking = false;
+                gameObject.GetComponent<StudioEventEmitter>().Stop();
+            }
+        }
 
         // move according to transform direction
         Vector3 movement3D = (movementInput.x * transform.right) + (movementInput.y * transform.forward);

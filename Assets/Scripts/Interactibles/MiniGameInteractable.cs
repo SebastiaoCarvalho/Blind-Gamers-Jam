@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,7 +37,7 @@ public class MiniGameInteractable : Interactable {
 
     public void TrySound(string sound) {
         SequenceMiniGame sequenceMiniGame = (SequenceMiniGame) miniGame; // FIXME: need to work on a better solution later
-        Sound soundObj = new Sound(sound, gameObject.GetComponent<AudioSource>());
+        Sound soundObj = new Sound(sound, gameObject.GetComponent<StudioEventEmitter>());
         soundObj.Play();
         if (sequenceMiniGame.TrySound(soundObj)) {
             Debug.Log("Correct sound");

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FMODUnity;
 using UnityEngine;
 
 public class SequenceMiniGame : MiniGame {
@@ -10,10 +11,10 @@ public class SequenceMiniGame : MiniGame {
     public SequenceMiniGame(MiniGameInteractable interactable) : base(interactable) {
         solution = new List<Sound>();
         int sequenceLength = 4;
-        string[] sounds = {"A", "B", "C", "D"};
+        string[] sounds = {"Left", "Up", "Right", "Down"};
         for (int i = 0; i < sequenceLength; i++) {
             string sound = sounds[Random.Range(0, sounds.Length)];
-            solution.Add(new Sound(sound, interactable.gameObject.GetComponent<AudioSource>()));
+            solution.Add(new Sound(sound, interactable.gameObject.GetComponent<StudioEventEmitter>()));
         }
         remainingSounds = new List<Sound>(solution);
 
