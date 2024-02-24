@@ -29,8 +29,13 @@ public class SequenceMiniGame : MiniGame {
         foreach (Sound sound in solution) {
             await Task.Delay((int) (delay_time * 1000)); // delay_time is in seconds
             Debug.Log("Playing sound: " + sound.SoundName);
-            PlayAudio(sound);
+            new Task(() => PlayAudio(sound));
         }
+    }
+
+    private void PlayAudio(Sound[] sounds) {
+        Sound sound = sounds[0];
+        
     }
 
     void PlayAudio(Sound sound)
@@ -38,6 +43,11 @@ public class SequenceMiniGame : MiniGame {
         sound.Play();
         delay_time = sound.GetLength() + .5f; //1 second is added to cater for the loading delay          
     }
+
+    /* void PlayWhenClear(Sound sound)
+    {
+        sound.PlayWhenClear();
+    } */
 
     public bool TrySound(Sound sound) {
         if (sound == remainingSounds[0]) {

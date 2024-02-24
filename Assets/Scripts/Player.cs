@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     private float movement; // sign of player movement
     private float rotationMovement; // sign of camera rotation
     private bool walking = false; // switch for walking sound
+    private StudioEventEmitter walkingEventEmmiter;
+    private StudioEventEmitter rotateEventEmmiter;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,8 @@ public class Player : MonoBehaviour
         initialRotation = transform.rotation.eulerAngles.y;
         rotationTarget = transform.rotation.eulerAngles.y;
         rotationMovement = 0;
+        walkingEventEmmiter = gameObject.GetComponents<StudioEventEmitter>()[0];
+        rotateEventEmmiter = gameObject.GetComponents<StudioEventEmitter>()[1];
     }
 
     // Update is called once per frame
@@ -52,13 +56,13 @@ public class Player : MonoBehaviour
         if (movementInput != Vector2.zero) {
             if (! walking) {
                 walking = true;
-                gameObject.GetComponent<StudioEventEmitter>().Play();
+                walkingEventEmmiter.Play();
             }
         }
         else {
             if (walking) {
                 walking = false;
-                gameObject.GetComponent<StudioEventEmitter>().Stop();
+                walkingEventEmmiter.Stop();
             }
         }
 
@@ -74,6 +78,14 @@ public class Player : MonoBehaviour
 
         rotation = Math.Sign(rotation);
         if (rotation != rotationMovement && rotation != 0) {
+            if (rotation > 0) {
+                rotateEventEmmiter.EventReference = EventReference.Find("event:/Sound Effects/Move/Turn Left");
+                rotateEventEmmiter.Play();
+            }
+            else {
+                rotateEventEmmiter.EventReference = EventReference.Find("event:/Sound Effects/Move/Turn Right");
+                rotateEventEmmiter.Play();
+            }
             if (rotationMovement != 0) {
                 initialRotation = rotationTarget;
             }
