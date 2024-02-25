@@ -57,15 +57,14 @@ public class Player : MonoBehaviour
         if (movementInput != Vector2.zero) {
             if (! walking) {
                 walking = true;
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Move/Player_Steps");
-
-}
+                gameObject.GetComponent<StudioEventEmitter>().Play();
+            }
         }
         else {
             if (walking) {
                 walking = false;
                 walkingEventEmmiter.Stop();
-                //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Move/Turn Left");
+                gameObject.GetComponent<StudioEventEmitter>().Stop();
             }
         }
 
