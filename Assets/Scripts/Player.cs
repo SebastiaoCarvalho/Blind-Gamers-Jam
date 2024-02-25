@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMODUnity;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
@@ -56,13 +57,15 @@ public class Player : MonoBehaviour
         if (movementInput != Vector2.zero) {
             if (! walking) {
                 walking = true;
-                walkingEventEmmiter.Play();
-            }
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Move/Player_Steps");
+
+}
         }
         else {
             if (walking) {
                 walking = false;
                 walkingEventEmmiter.Stop();
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Move/Turn Left");
             }
         }
 
@@ -79,12 +82,14 @@ public class Player : MonoBehaviour
         rotation = Math.Sign(rotation);
         if (rotation != rotationMovement && rotation != 0) {
             if (rotation > 0) {
-                rotateEventEmmiter.EventReference = EventReference.Find("event:/Sound Effects/Move/Turn Left");
-                rotateEventEmmiter.Play();
+                //rotateEventEmmiter.EventReference = EventReference.Find("event:/Sound Effects/Move/Turn Left");
+                //rotateEventEmmiter.Play();
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Move/Turn Right");
             }
             else {
-                rotateEventEmmiter.EventReference = EventReference.Find("event:/Sound Effects/Move/Turn Right");
-                rotateEventEmmiter.Play();
+                //rotateEventEmmiter.EventReference = EventReference.Find("event:/Sound Effects/Move/Turn Right");
+                //rotateEventEmmiter.Play();
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Move/Turn Left");
             }
             if (rotationMovement != 0) {
                 initialRotation = rotationTarget;

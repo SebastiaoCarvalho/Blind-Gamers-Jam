@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6717596486372315991}
   - component: {fileID: 6688078244331747647}
   - component: {fileID: 8069871250113347538}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MazeCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
