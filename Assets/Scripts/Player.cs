@@ -159,20 +159,32 @@ public class Player : MonoBehaviour
 
     public void AddInteractible(GameObject interactible) {
         interactables.Add(interactible);
+        Debug.Log("Added interactible " + interactible.name);
+        Debug.Log("Interactables:");
+        foreach (GameObject i in interactables) {
+            Debug.Log(i.name);
+        }
     }
 
     public void RemoveInteractible(GameObject interactible) {
         interactables.Remove(interactible);
+        Debug.Log("Removed interactible " + interactible.name);
+        Debug.Log("Interactables:");
+        foreach (GameObject i in interactables) {
+            Debug.Log(i.name);
+        }
     }
 
     public void PlaySound(InputAction.CallbackContext obj) {
         int i = obj.action.name[^1] - '1'; // Convert last character of action name to int
         Debug.Log(obj.action.name + " " + i);
         if (interactables.Count == 0) return;
-        string [] sounds = {"A", "B", "C", "D"};
+        string [] sounds = {"Left", "Up", "Right", "Down"};
         string sound = sounds[i];
         Debug.Log("Playing sound " + sound);
         MiniGameInteractable miniGameInteractable = interactables[0].GetComponent<MiniGameInteractable>();
+        Debug.Log(interactables[0].name);
+        Debug.Log(miniGameInteractable);
         miniGameInteractable.TrySound(sound);
     }
 

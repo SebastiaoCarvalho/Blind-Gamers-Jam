@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1015,9 +1015,13 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 3613251275863445599, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7381052945158821703, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Door2
       objectReference: {fileID: 0}
     - target: {fileID: 8921827747607438270, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
       propertyPath: m_LocalScale.x
@@ -7213,11 +7217,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1406570150
-      Data2: 1258603908
-      Data3: 1912746127
-      Data4: -205077966
-    Path: event:/UI/Puzzle_Down
+      Data1: -2052223995
+      Data2: 1311797360
+      Data3: 57180316
+      Data4: -1622908813
+    Path: event:/UI/Sequences/seq_UpDownLeftRight
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -10759,9 +10763,13 @@ PrefabInstance:
       propertyPath: m_IncludeLayers.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 3613251275863445599, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7381052945158821703, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Door1
       objectReference: {fileID: 0}
     - target: {fileID: 7381052945158821703, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
       propertyPath: m_TagString
@@ -10907,7 +10915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4871725552356994821, guid: 26217551e4d11334695b8711384850ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 155.55
+      value: 180.7
       objectReference: {fileID: 0}
     - target: {fileID: 4871725552356994821, guid: 26217551e4d11334695b8711384850ee, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10915,7 +10923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4871725552356994821, guid: 26217551e4d11334695b8711384850ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 89.53
+      value: 111.86
       objectReference: {fileID: 0}
     - target: {fileID: 4871725552356994821, guid: 26217551e4d11334695b8711384850ee, type: 3}
       propertyPath: m_LocalRotation.w

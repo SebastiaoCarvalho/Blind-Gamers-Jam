@@ -12,12 +12,13 @@ public class Sound {
     public Sound(string sound, StudioEventEmitter source) {
         this.sound = sound;
         this.source = source;
-        this.eventName = "event:/UI/Puzzle_" + sound;
+        this.eventName = "event:/UI/" + sound;
         
     }
 
     public void Play() {
         source.EventReference = EventReference.Find(eventName);
+        Debug.Log("source event is now:" + source.EventReference.Path);
         source.Play();
     }
 
