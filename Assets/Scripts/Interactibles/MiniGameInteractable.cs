@@ -30,8 +30,16 @@ public class MiniGameInteractable : Interactable {
         playerInput.SwitchCurrentActionMap("PlayerActions");
     }
 
+    public void LoseGame() {
+        EndGame();
+    }
+
     public void WinGame() {
         door.UseKey(key.KeyName);
+        StudioEventEmitter sound = gameObject.GetComponent<StudioEventEmitter>();
+        sound.EventReference = EventReference.Find("event:/UI/Puzzle_Win");
+        sound.Stop();
+        sound.Play();
         EndGame();
     }
 

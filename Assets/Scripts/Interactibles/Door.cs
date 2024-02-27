@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class Door : Interactable {
@@ -9,11 +10,19 @@ public class Door : Interactable {
     {
         if (locks.Count > 0) {
             Debug.Log("Door is locked");
+            gameObject.GetComponent<Rigidbody>().detectCollisions = false;
+            StudioEventEmitter sound = gameObject.GetComponent<StudioEventEmitter>();
+            sound.EventReference = EventReference.Find("event:/Sound Effects/Locked Door/Door_Locked");
+            sound.Play();
             return;
         }
-        if (! isOpen) gameObject.GetComponent<Rigidbody>().detectCollisions = false;
-        else gameObject.GetComponent<Rigidbody>().detectCollisions = true;
-        isOpen = ! isOpen;
+        if (! isOpen) { // open door
+            gameObject.GetComponent<Rigidbody>().detectCollisions = false;
+            StudioEventEmitter sound = gameObject.GetComponent<StudioEventEmitter>();
+            sound.EventReference = EventReference.Find("event:/Sound Effects/Locked Door/Door_Open");
+            sound.Play();
+        }
+        isOpen = true;
     }
 
     public bool UseKey(string key) {

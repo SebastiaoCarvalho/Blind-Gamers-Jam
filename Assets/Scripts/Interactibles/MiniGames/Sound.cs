@@ -19,6 +19,7 @@ public class Sound {
     public void Play() {
         source.EventReference = EventReference.Find(eventName);
         Debug.Log("source event is now:" + source.EventReference.Path);
+        source.Stop();
         source.Play();
     }
 

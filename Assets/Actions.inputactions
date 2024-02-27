@@ -174,28 +174,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "eb6b0556-863b-4731-9e43-edfb23f2e509",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "957a9a07-37d9-45ae-b94d-43cc96a89ad3",
-                    "path": "<Gamepad>/leftStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "1D Axis Keyboard",
                     "id": "e058c45a-95da-49da-bfd4-7b9046d68840",
                     "path": "1DAxis",
@@ -229,6 +207,39 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "1D Axis Keyboard WASD",
+                    "id": "d4235519-97f1-4016-8aa6-3f2347753c01",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "94c48f4d-73c5-453b-91e9-17302996b7c8",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "213ce909-bed8-426e-acd2-3a0c41dc0db8",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "1D Axis GamePad",
                     "id": "fb9537c6-cbd1-4a1d-84b0-4b55c4dd28b7",
                     "path": "1DAxis",
@@ -242,7 +253,7 @@
                 {
                     "name": "negative",
                     "id": "a885ed5c-b473-4f1f-9681-1caf0f950ee5",
-                    "path": "<Gamepad>/rightStick/left",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -253,7 +264,40 @@
                 {
                     "name": "positive",
                     "id": "e1f55681-b127-4f4a-b34d-0a23f547d0de",
-                    "path": "<Gamepad>/rightStick/right",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis GamePad Pad",
+                    "id": "3ff0e329-495d-499b-a34d-3c4d2ed301a3",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "33a16f1a-1fb6-402e-97e3-2fba640b0d7e",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "ecf40e46-705d-4215-8c6d-ee2b6ccce089",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
