@@ -62,11 +62,9 @@ public class Player : MonoBehaviour
         Vector2 movementInput = movementAction.action.ReadValue<Vector2>();
         float stepSize = 2f;
         /* movementInput = new Vector2(Mathf.Sign(movementInput.x), Mathf.Sign(movementInput.y)); */
-        Debug.Log(movementInput);
         movementInput = new Vector2(Math.Sign(movementInput.x), Math.Sign(movementInput.y));
-        Debug.Log(rb.velocity);
         if (movement != movementInput && movementInput != Vector2.zero) {
-            Debug.Log(movementInput + " VS " + movement);
+            /* Debug.Log("Activate " + movementInput); */
             if (! walking) {
                 walking = true;
                 gameObject.GetComponent<StudioEventEmitter>().Play();
@@ -76,12 +74,9 @@ public class Player : MonoBehaviour
             }
             else initialMovement = new Vector2(transform.position.x, transform.position.z);
             movement = movementInput;
-            Debug.Log("Without transform " + movement);
-            Debug.Log("Right " + transform.right + " Forward " + transform.forward);
             Vector3 movementTransformed = (movement.x * transform.right) + (movement.y * transform.forward);
             Vector2 movement2D = new Vector2(movementTransformed.x, movementTransformed.z);
             movementTarget = initialMovement + movement2D * stepSize;
-            Debug.Log("From " + initialMovement + " to " + movementTarget + " with " + movementTransformed);
         }
         else {
             if (walking) {
@@ -92,12 +87,11 @@ public class Player : MonoBehaviour
         }
         if ((new Vector3(movementTarget.x, transform.position.y, movementTarget.y) - transform.position).magnitude < 0.1) {
             transform.position = new Vector3(movementTarget.x, transform.position.y, movementTarget.y);
-            Debug.Log("Reached target " + movementTarget);
             movement = Vector2.zero;
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            Debug.Log("Movement target reached");
         }
         else if (transform.position != new Vector3(movementTarget.x, transform.position.y, movementTarget.y)) {
-            Debug.Log("Moving to " + movementTarget);
             Vector3 movementTransformed = (movement.x * transform.right) + (movement.y * transform.forward);
             Vector2 movement2D = new Vector2(movementTransformed.x, movementTransformed.z);
             
@@ -106,9 +100,6 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector3(movement2D.x  * speed, rb.velocity.y, movement2D.y * speed);
             // transform.position = Vector3.MoveTowards(transform.position, new Vector3(movementTarget.x, transform.position.y, movementTarget.y), speed * Time.fixedDeltaTime);
         }
-        Debug.Log("pos " + transform.position + " target " + movementTarget + 
-        " diff " + (new Vector3(movementTarget.x, transform.position.y, movementTarget.y) - transform.position).magnitude);
-        // move according to transform direction
         
     }
 
@@ -223,6 +214,16 @@ public class Player : MonoBehaviour
         Debug.Log(interactables[0].name);
         Debug.Log(miniGameInteractable);
         miniGameInteractable.TrySound(sound);
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.CompareTag("Wall")) {
+        Debug.Log("Collided with " + other.gameObject.name);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Move/Wall_Hit");
+            movement = -movement;
+            movementTarget = initialMovement;
+            transform.position = new Vector3(movementTarget.x, transform.position.y, movementTarget.y);
+        }
     }
 
 }

@@ -22,7 +22,7 @@ public class SequenceMiniGame : MiniGame {
             solution.Add(new Sound("Puzzle_" + sounds[i], interactable.gameObject.GetComponent<StudioEventEmitter>()));
         }
         remainingSounds = new List<Sound>(solution);
-        sequenceSound = new Sound("Sequences/seq_UpDownLeftRight", interactable.gameObject.GetComponent<StudioEventEmitter>());
+        sequenceSound = new Sound("seq_UpDownLeftRight", interactable.gameObject.GetComponent<StudioEventEmitter>());
 
     }
 
