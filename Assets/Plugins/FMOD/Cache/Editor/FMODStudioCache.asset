@@ -182,10 +182,10 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638444878283865595
+  lastModified: 638446535833929620
   FileSizes:
   - Name: 
-    Value: 2004
+    Value: 2238
   Exists: 1
 --- !u!114 &-2347539336154349487
 MonoBehaviour:
@@ -301,6 +301,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-131417979301934959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Locked Door/Keys
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Locked Door/Keys
+  Guid:
+    Data1: 637979351
+    Data2: 1152334552
+    Data3: 340459406
+    Data4: -564257629
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +360,11 @@ MonoBehaviour:
   - {fileID: 1425793682822263020}
   - {fileID: 3003437729098058792}
   - {fileID: 6347189970477644034}
+  - {fileID: 5659037769114878696}
+  - {fileID: 5387698349225168248}
+  - {fileID: 5524172124805287728}
+  - {fileID: 7930819468179746614}
+  - {fileID: -131417979301934959}
   EditorParameters:
   - {fileID: 2918898153129922869}
   - {fileID: 4864306591133516904}
@@ -340,7 +372,7 @@ MonoBehaviour:
   - {fileID: 3093370939182371372}
   StringsBanks:
   - {fileID: -2427819809493424900}
-  cacheTime: 638444878283865595
+  cacheTime: 638446535833929620
   cacheVersion: 131616
 --- !u!114 &143819560119788709
 MonoBehaviour:
@@ -464,7 +496,7 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638444878283696036
+  lastModified: 638446535833904245
   FileSizes: []
   Exists: 1
 --- !u!114 &3632455084704461687
@@ -519,7 +551,7 @@ MonoBehaviour:
   Parameters:
   - {fileID: 3632455084704461687}
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 40
   Length: 154666
 --- !u!114 &4864306591133516904
 MonoBehaviour:
@@ -601,6 +633,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &5387698349225168248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Locked Door/Door_Open
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Locked Door/Door_Open
+  Guid:
+    Data1: -1531453550
+    Data2: 1250451727
+    Data3: -2102838093
+    Data4: 1905940738
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5471074945958730914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,6 +678,60 @@ MonoBehaviour:
     Data2: 1258603908
     Data3: 1912746127
     Data4: -205077966
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5524172124805287728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Locked Door/Door_Locked
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Locked Door/Door_Locked
+  Guid:
+    Data1: -1632654184
+    Data2: 1145243063
+    Data3: 268422795
+    Data4: -1291082210
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5659037769114878696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Move/Wall_Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Move/Wall_Hit
+  Guid:
+    Data1: 1893184351
+    Data2: 1087583528
+    Data3: 529475213
+    Data4: -1656883399
   Banks:
   - {fileID: 3093370939182371372}
   IsStream: 0
@@ -686,3 +799,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 28714
+--- !u!114 &7930819468179746614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Dog/Dog_Bark
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Dog/Dog_Bark
+  Guid:
+    Data1: 746163885
+    Data2: 1181368391
+    Data3: -960019028
+    Data4: -390961325
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
