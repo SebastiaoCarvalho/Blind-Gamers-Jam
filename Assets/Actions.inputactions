@@ -86,9 +86,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
+                    "name": "up",
                     "id": "d67c09aa-6527-4ea6-8ce0-252ce8cdf5b0",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -97,9 +97,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
+                    "name": "down",
                     "id": "dbf0accd-1ed3-41b5-8d27-08f1287cb957",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -133,28 +133,6 @@
                     "name": "down",
                     "id": "35b6898f-f5de-4f00-a5b1-8272c7834751",
                     "path": "<Gamepad>/dpad/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "be5087b2-7223-44d9-b950-1c343397266c",
-                    "path": "<Gamepad>/dpad/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "498bbab8-3a51-470c-884a-10ee8aef4213",
-                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -49,14 +49,16 @@ public class Player : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        // Camera rotation
+        Rotation();
+
         // Player movement
         Movement();
 
-        // Camera rotation
-        Rotation();
     }
 
     private void Movement() {
+        if (rotationMovement != 0) return;
         Vector2 movementInput = movementAction.action.ReadValue<Vector2>();
         float stepSize = 2f;
         /* movementInput = new Vector2(Mathf.Sign(movementInput.x), Mathf.Sign(movementInput.y)); */
@@ -111,8 +113,8 @@ public class Player : MonoBehaviour
     }
 
     private void Rotation() {
+        if (movement != Vector2.zero) return;
         float rotation = cameraAction.action.ReadValue<float>();
-
         rotation = Math.Sign(rotation);
         if (rotation != rotationMovement && rotation != 0) {
             if (rotation > 0) {
