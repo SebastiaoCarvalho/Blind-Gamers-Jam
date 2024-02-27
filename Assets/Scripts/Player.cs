@@ -17,9 +17,11 @@ public class Player : MonoBehaviour
     private GameObject dog;
     private List<GameObject> interactables = new List<GameObject>();
     private Rigidbody rb;
+    private Vector2 movementTarget; // target movement position
     private float rotationTarget; // target rotation position
+    private Vector2 initialMovement; // initial movement position
     private float initialRotation; // initial rotation position
-    private float movement; // sign of player movement
+    private Vector2 movement; // sign of player movement
     private float rotationMovement; // sign of camera rotation
     private bool walking = false; // switch for walking sound
     private StudioEventEmitter walkingEventEmmiter;
@@ -31,8 +33,11 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         dog = GameObject.Find("GuideDog");
         initialRotation = transform.rotation.eulerAngles.y;
+        initialMovement = new Vector2(transform.position.x, transform.position.z);
         rotationTarget = transform.rotation.eulerAngles.y;
+        movementTarget = new Vector2(transform.position.x, transform.position.z);
         rotationMovement = 0;
+        movement = Vector2.zero;
         walkingEventEmmiter = gameObject.GetComponents<StudioEventEmitter>()[0];
         rotateEventEmmiter = gameObject.GetComponents<StudioEventEmitter>()[1];
     }
@@ -53,12 +58,28 @@ public class Player : MonoBehaviour
 
     private void Movement() {
         Vector2 movementInput = movementAction.action.ReadValue<Vector2>();
+        float stepSize = 2f;
         /* movementInput = new Vector2(Mathf.Sign(movementInput.x), Mathf.Sign(movementInput.y)); */
-        if (movementInput != Vector2.zero) {
+        Debug.Log(movementInput);
+        movementInput = new Vector2(Math.Sign(movementInput.x), Math.Sign(movementInput.y));
+        Debug.Log(rb.velocity);
+        if (movement != movementInput && movementInput != Vector2.zero) {
+            Debug.Log(movementInput + " VS " + movement);
             if (! walking) {
                 walking = true;
                 gameObject.GetComponent<StudioEventEmitter>().Play();
             }
+            if (movement != Vector2.zero) {
+                initialMovement = movementTarget;
+            }
+            else initialMovement = new Vector2(transform.position.x, transform.position.z);
+            movement = movementInput;
+            Debug.Log("Without transform " + movement);
+            Debug.Log("Right " + transform.right + " Forward " + transform.forward);
+            Vector3 movementTransformed = (movement.x * transform.right) + (movement.y * transform.forward);
+            Vector2 movement2D = new Vector2(movementTransformed.x, movementTransformed.z);
+            movementTarget = initialMovement + movement2D * stepSize;
+            Debug.Log("From " + initialMovement + " to " + movementTarget + " with " + movementTransformed);
         }
         else {
             if (walking) {
@@ -67,12 +88,26 @@ public class Player : MonoBehaviour
                 gameObject.GetComponent<StudioEventEmitter>().Stop();
             }
         }
-
+        if ((new Vector3(movementTarget.x, transform.position.y, movementTarget.y) - transform.position).magnitude < 0.1) {
+            transform.position = new Vector3(movementTarget.x, transform.position.y, movementTarget.y);
+            Debug.Log("Reached target " + movementTarget);
+            movement = Vector2.zero;
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
+        }
+        else if (transform.position != new Vector3(movementTarget.x, transform.position.y, movementTarget.y)) {
+            Debug.Log("Moving to " + movementTarget);
+            Vector3 movementTransformed = (movement.x * transform.right) + (movement.y * transform.forward);
+            Vector2 movement2D = new Vector2(movementTransformed.x, movementTransformed.z);
+            
+            movement2D.Normalize();
+            
+            rb.velocity = new Vector3(movement2D.x  * speed, rb.velocity.y, movement2D.y * speed);
+            // transform.position = Vector3.MoveTowards(transform.position, new Vector3(movementTarget.x, transform.position.y, movementTarget.y), speed * Time.fixedDeltaTime);
+        }
+        Debug.Log("pos " + transform.position + " target " + movementTarget + 
+        " diff " + (new Vector3(movementTarget.x, transform.position.y, movementTarget.y) - transform.position).magnitude);
         // move according to transform direction
-        Vector3 movement3D = (movementInput.x * transform.right) + (movementInput.y * transform.forward);
-        movement3D.Normalize();
-
-        rb.velocity = new Vector3(movement3D.x  * speed, rb.velocity.y, movement3D.z * speed);
+        
     }
 
     private void Rotation() {
