@@ -54,6 +54,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7826765484684177533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Puzzle_Sequence1
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Puzzle_Sequence1
+  Guid:
+    Data1: -5652096
+    Data2: 1302627710
+    Data3: -1119701595
+    Data4: -1151160001
+  Banks:
+  - {fileID: 3093370939182371372}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8991480286570431043}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6154572419447514172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,10 +210,10 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638446535833929620
+  lastModified: 638446673576308643
   FileSizes:
   - Name: 
-    Value: 2238
+    Value: 2206
   Exists: 1
 --- !u!114 &-2347539336154349487
 MonoBehaviour:
@@ -214,38 +242,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-591501423475776508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/seq_UpDownLeftRight/Puzzle_Win
-  m_EditorClassIdentifier: 
-  Name: Puzzle_Win
-  StudioPath: 
-  Min: 0
-  Max: 7
-  Default: 0
-  ID:
-    data1: 910929609
-    data2: 2488580644
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - 0
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - Win
-  Exists: 1
 --- !u!114 &-490238686580069292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,12 +355,12 @@ MonoBehaviour:
   - {fileID: -490238686580069292}
   - {fileID: 1425793682822263020}
   - {fileID: 3003437729098058792}
-  - {fileID: 6347189970477644034}
   - {fileID: 5659037769114878696}
   - {fileID: 5387698349225168248}
   - {fileID: 5524172124805287728}
   - {fileID: 7930819468179746614}
   - {fileID: -131417979301934959}
+  - {fileID: -7826765484684177533}
   EditorParameters:
   - {fileID: 2918898153129922869}
   - {fileID: 4864306591133516904}
@@ -372,7 +368,7 @@ MonoBehaviour:
   - {fileID: 3093370939182371372}
   StringsBanks:
   - {fileID: -2427819809493424900}
-  cacheTime: 638446535833929620
+  cacheTime: 638446673576308643
   cacheVersion: 131616
 --- !u!114 &143819560119788709
 MonoBehaviour:
@@ -496,7 +492,7 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638446535833904245
+  lastModified: 638446673576283143
   FileSizes: []
   Exists: 1
 --- !u!114 &3632455084704461687
@@ -741,64 +737,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &5786133384498780252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/seq_UpDownLeftRight/Puzzle_1
-  m_EditorClassIdentifier: 
-  Name: Puzzle_1
-  StudioPath: 
-  Min: 0
-  Max: 4
-  Default: 1
-  ID:
-    data1: 2876900767
-    data2: 3711645090
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - 0
-  - 1
-  - 2
-  - 3
-  - 4
-  Exists: 1
---- !u!114 &6347189970477644034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Sequences/seq_UpDownLeftRight
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Sequences/seq_UpDownLeftRight
-  Guid:
-    Data1: -2052223995
-    Data2: 1311797360
-    Data3: 57180316
-    Data4: -1622908813
-  Banks:
-  - {fileID: 3093370939182371372}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -591501423475776508}
-  - {fileID: 5786133384498780252}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 28714
 --- !u!114 &7930819468179746614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,3 +764,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8991480286570431043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Puzzle_Sequence1/Puzzle_1
+  m_EditorClassIdentifier: 
+  Name: Puzzle_1
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 1
+  ID:
+    data1: 2876900767
+    data2: 3711645090
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  Exists: 1
