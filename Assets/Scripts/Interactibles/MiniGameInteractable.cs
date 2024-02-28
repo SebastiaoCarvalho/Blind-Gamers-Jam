@@ -18,11 +18,17 @@ public class MiniGameInteractable : Interactable {
     }
 
     public override void Interact() {
+        if (miniGame.IsFinished()) return;
         Debug.Log("Interacting with minigame");
         // activate minigame interaction
         PlayerInput playerInput = GameObject.Find("PlayerInput").GetComponent<PlayerInput>();
         playerInput.SwitchCurrentActionMap("SequenceGameActions"); // FIXME : Each minigame should do this if they have their own input map
+        Debug.Log("IS THE MINIGAME FINISHED? " + miniGame.IsFinished());
         miniGame.Play();
+    }
+
+    public bool IsFinished() {
+        return miniGame.IsFinished();
     }
 
     public void EndGame() {

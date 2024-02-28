@@ -17,25 +17,16 @@ public class Sound {
     }
 
     public void Play() {
+        source.EventInstance.release();
         source.EventReference = EventReference.Find(eventName);
         Debug.Log("source event is now:" + source.EventReference.Path);
-        source.Stop();
         source.Play();
     }
-
-    /* public async void PlayWhenClear() {
-        
-        source.Play();
-    } */
 
     public float PlayDelayed(float delay) {
         source.Play();
         return 1 + delay;
     }
-
-    /* public void AddCallback(Sound callbackSound) {
-        source.EventInstance.setCallback(() => sound.Pl)
-    } */
 
     public float GetLength() {
         /* source.EventDescription.getLength(out int length); */

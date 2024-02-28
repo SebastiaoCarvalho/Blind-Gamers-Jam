@@ -39,6 +39,11 @@ public class Dog : MonoBehaviour
         }
     }
 
+    public void Bark() {
+        StudioEventEmitter emmiter = GetComponents<StudioEventEmitter>()[1];
+        emmiter.Play();
+    }
+
     public void HearCall() {
         currentAction = new Follow(agent);
     }

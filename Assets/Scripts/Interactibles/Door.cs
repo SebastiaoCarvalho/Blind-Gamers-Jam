@@ -10,7 +10,6 @@ public class Door : Interactable {
     {
         if (locks.Count > 0) {
             Debug.Log("Door is locked");
-            gameObject.GetComponent<Rigidbody>().detectCollisions = false;
             StudioEventEmitter sound = gameObject.GetComponent<StudioEventEmitter>();
             sound.EventReference = EventReference.Find("event:/Sound Effects/Locked Door/Door_Locked");
             sound.Play();

@@ -61,10 +61,8 @@ public class Player : MonoBehaviour
         if (rotationMovement != 0) return;
         Vector2 movementInput = movementAction.action.ReadValue<Vector2>();
         float stepSize = 2f;
-        /* movementInput = new Vector2(Mathf.Sign(movementInput.x), Mathf.Sign(movementInput.y)); */
         movementInput = new Vector2(Math.Sign(movementInput.x), Math.Sign(movementInput.y));
         if (movement != movementInput && movementInput != Vector2.zero) {
-            /* Debug.Log("Activate " + movementInput); */
             if (! walking) {
                 walking = true;
                 gameObject.GetComponent<StudioEventEmitter>().Play();
@@ -78,7 +76,7 @@ public class Player : MonoBehaviour
             Vector2 movement2D = new Vector2(movementTransformed.x, movementTransformed.z);
             movementTarget = initialMovement + movement2D * stepSize;
         }
-        else {
+        else if (rb.velocity == Vector3.zero) {
             if (walking) {
                 walking = false;
                 walkingEventEmmiter.Stop();
@@ -89,7 +87,6 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(movementTarget.x, transform.position.y, movementTarget.y);
             movement = Vector2.zero;
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
-            Debug.Log("Movement target reached");
         }
         else if (transform.position != new Vector3(movementTarget.x, transform.position.y, movementTarget.y)) {
             Vector3 movementTransformed = (movement.x * transform.right) + (movement.y * transform.forward);
@@ -217,7 +214,7 @@ public class Player : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag("Wall")) {
+        if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Clue")) {
         Debug.Log("Collided with " + other.gameObject.name);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Move/Wall_Hit");
             movement = -movement;
