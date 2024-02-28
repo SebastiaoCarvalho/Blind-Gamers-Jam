@@ -1015,6 +1015,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1375185069}
     m_Modifications:
+    - target: {fileID: 3251017448047690707, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/Sound Effects/Locked Door/Door_Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251017448047690707, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251017448047690707, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
+      propertyPath: OverrideMinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251017448047690707, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: -1531453550
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251017448047690707, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1250451727
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251017448047690707, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: -2102838093
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251017448047690707, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 1905940738
+      objectReference: {fileID: 0}
     - target: {fileID: 3613251275863445599, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
       propertyPath: m_Radius
       value: 0.6
@@ -7076,6 +7104,7 @@ GameObject:
   - component: {fileID: 1399684770}
   - component: {fileID: 1399684771}
   - component: {fileID: 1399684772}
+  - component: {fileID: 1399684773}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -7221,11 +7250,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -2052223995
-      Data2: 1311797360
-      Data3: 57180316
-      Data4: -1622908813
-    Path: event:/UI/Sequences/seq_UpDownLeftRight
+      Data1: -332681404
+      Data2: 1195829188
+      Data3: 1759598223
+      Data4: -296414270
+    Path: event:/UI/Puzzle_Left
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -7237,6 +7266,37 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &1399684773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399684765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1 &1403667688 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7025891762483462194, guid: 26217551e4d11334695b8711384850ee, type: 3}
@@ -10758,6 +10818,14 @@ PrefabInstance:
     - target: {fileID: 2999348669816963489, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251017448047690707, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251017448047690707, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
+      propertyPath: OverrideMinDistance
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3613251275863445599, guid: 9a24780fdad465846900404aa6329b8f, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
