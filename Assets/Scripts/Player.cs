@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         rotationMovement = 0;
         movement = Vector2.zero;
         //walkingEventEmmiter = gameObject.GetComponents<StudioEventEmitter>()[0];
-        rotateEventEmmiter = gameObject.GetComponents<StudioEventEmitter>()[1];
+        //rotateEventEmmiter = gameObject.GetComponents<StudioEventEmitter>()[1];
         instance = FMODUnity.RuntimeManager.CreateInstance("event:/Sound Effects/Move/Player_Steps");
     }
 
