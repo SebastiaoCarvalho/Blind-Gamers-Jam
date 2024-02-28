@@ -10,6 +10,7 @@ using UnityEngine.InputSystem.Controls;
 
 public class Player : MonoBehaviour
 {
+    private FMOD.Studio.EventInstance instance;
 
     [SerializeField] private float speed = 5f, cameraSpeed = 20;
     [SerializeField] private InputActionReference movementAction, cameraAction, dogCallAction, dogFindAction, interactAction;
@@ -24,8 +25,8 @@ public class Player : MonoBehaviour
     private Vector2 movement; // sign of player movement
     private float rotationMovement; // sign of camera rotation
     private bool walking = false; // switch for walking sound
-    private StudioEventEmitter walkingEventEmmiter;
-    private StudioEventEmitter rotateEventEmmiter;
+    //private StudioEventEmitter walkingEventEmmiter;
+    //private StudioEventEmitter rotateEventEmmiter;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +39,9 @@ public class Player : MonoBehaviour
         movementTarget = new Vector2(transform.position.x, transform.position.z);
         rotationMovement = 0;
         movement = Vector2.zero;
-        walkingEventEmmiter = gameObject.GetComponents<StudioEventEmitter>()[0];
+        //walkingEventEmmiter = gameObject.GetComponents<StudioEventEmitter>()[0];
         rotateEventEmmiter = gameObject.GetComponents<StudioEventEmitter>()[1];
+        instance = FMODUnity.RuntimeManager.CreateInstance("event:/Sound Effects/Move/Player_Steps");
     }
 
     // Update is called once per frame
@@ -67,7 +69,10 @@ public class Player : MonoBehaviour
             /* Debug.Log("Activate " + movementInput); */
             if (! walking) {
                 walking = true;
-                gameObject.GetComponent<StudioEventEmitter>().Play();
+                //gameObject.GetComponent<StudioEventEmitter>().Play();
+                instance = FMODUnity.RuntimeManager.CreateInstance("event:/Sound Effects/Move/Player_Steps");
+                instance.start();
+                instance.release();
             }
             if (movement != Vector2.zero) {
                 initialMovement = movementTarget;
@@ -81,8 +86,10 @@ public class Player : MonoBehaviour
         else {
             if (walking) {
                 walking = false;
-                walkingEventEmmiter.Stop();
-                gameObject.GetComponent<StudioEventEmitter>().Stop();
+                //walkingEventEmmiter.Stop();
+                //gameObject.GetComponent<StudioEventEmitter>().Stop();
+                instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                instance.release();
             }
         }
         if ((new Vector3(movementTarget.x, transform.position.y, movementTarget.y) - transform.position).magnitude < 0.1) {
