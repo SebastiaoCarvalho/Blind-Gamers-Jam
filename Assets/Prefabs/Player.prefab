@@ -173,10 +173,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 7752753
-      Data2: 1324144877
-      Data3: 1107596989
-      Data4: 897668139
+      Data1: 1214787872
+      Data2: 1235799563
+      Data3: 525864072
+      Data4: -1079675493
     Path: event:/Sound Effects/Move/Player_Steps
   Event: 
   PlayEvent: 0

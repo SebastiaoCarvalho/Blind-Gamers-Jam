@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -267,6 +267,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 722352962937094826, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: -281509045
+      objectReference: {fileID: 0}
+    - target: {fileID: 722352962937094826, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1190102806
+      objectReference: {fileID: 0}
+    - target: {fileID: 722352962937094826, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 492521149
+      objectReference: {fileID: 0}
+    - target: {fileID: 722352962937094826, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 1845343190
+      objectReference: {fileID: 0}
     - target: {fileID: 790717292597102665, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 256
@@ -317,23 +333,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5431991900227827249, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: EventReference.Path
-      value: event:/Sound Effects/Dog/Dog_Bark
+      value: event:/Sound Effects/Dog/Dog_Walk
       objectReference: {fileID: 0}
     - target: {fileID: 5431991900227827249, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: EventReference.Guid.Data1
-      value: 746163885
+      value: -281509045
       objectReference: {fileID: 0}
     - target: {fileID: 5431991900227827249, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: EventReference.Guid.Data2
-      value: 1181368391
+      value: 1190102806
       objectReference: {fileID: 0}
     - target: {fileID: 5431991900227827249, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: EventReference.Guid.Data3
-      value: -960019028
+      value: 492521149
       objectReference: {fileID: 0}
     - target: {fileID: 5431991900227827249, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: EventReference.Guid.Data4
-      value: -390961325
+      value: 1845343190
       objectReference: {fileID: 0}
     - target: {fileID: 5977996176658932438, guid: 551b1eb1aafc4e8429466fce81e6ae08, type: 3}
       propertyPath: m_Name
@@ -7174,10 +7190,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 7752753
-      Data2: 1324144877
-      Data3: 1107596989
-      Data4: 897668139
+      Data1: 1214787872
+      Data2: 1235799563
+      Data3: 525864072
+      Data4: -1079675493
     Path: event:/Sound Effects/Move/Player_Steps
   Event: 
   PlayEvent: 1
@@ -9914,7 +9930,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1941592343}
   - component: {fileID: 1941592344}
-  - component: {fileID: 1941592345}
   m_Layer: 0
   m_Name: Song to find
   m_TagString: Untagged
@@ -9944,7 +9959,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941592342}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -9968,24 +9983,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 40
---- !u!114 &1941592345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941592342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddb65b67b86f2b046abe61a7953d3df8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SelectAudio: event:/Music/Music
-  SoundOcclusionWidening: 0
-  PlayerOcclusionWidening: 0
-  OcclusionLayer:
-    serializedVersion: 2
-    m_Bits: 16
 --- !u!1001 &1961199908
 PrefabInstance:
   m_ObjectHideFlags: 0
