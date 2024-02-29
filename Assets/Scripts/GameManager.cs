@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     {
         puzz1 = GameObject.Find("MiniGame");
         puzz2 = GameObject.Find("MiniGame2");
-        end = GameObject.Find("EndGame");
+        end = GameObject.Find("Goal");
         puzz1.GetComponents<StudioEventEmitter>()[1].Play();
         now = puzz1;
     }
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         interactable = puzz2.GetComponent<MiniGameInteractable>();
         if (interactable.IsFinished() && now == puzz2) {
             puzz2.GetComponents<StudioEventEmitter>()[1].Stop();
-            end.GetComponents<StudioEventEmitter>()[1].Play();
+            end.GetComponents<StudioEventEmitter>()[0].Play();
             now = end;
             return;
         }

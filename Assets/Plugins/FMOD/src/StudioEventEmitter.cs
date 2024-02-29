@@ -197,6 +197,10 @@ namespace FMODUnity
             {
                 Lookup();
             }
+            if (hasTriggered)
+            {
+                Lookup();
+            }
 
             bool isSnapshot;
             eventDescription.isSnapshot(out isSnapshot);

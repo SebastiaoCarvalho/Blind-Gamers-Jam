@@ -3319,7 +3319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e20fadfa0ead241831f2649420771a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textName: 
+  textName: Options/Sound
 --- !u!1 &1413747745
 GameObject:
   m_ObjectHideFlags: 0
@@ -4742,6 +4742,7 @@ GameObject:
   - component: {fileID: 1984546523}
   - component: {fileID: 1984546522}
   - component: {fileID: 1984546521}
+  - component: {fileID: 1984546524}
   m_Layer: 5
   m_Name: ControlsButton
   m_TagString: Untagged
@@ -4863,6 +4864,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984546519}
   m_CullTransparentMesh: 1
+--- !u!114 &1984546524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984546519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e20fadfa0ead241831f2649420771a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textName: Options/Controls
 --- !u!1 &2016242310
 GameObject:
   m_ObjectHideFlags: 0

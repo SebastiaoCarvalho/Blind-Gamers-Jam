@@ -10,12 +10,18 @@ public class SequenceMiniGame : MiniGame {
 
     public SequenceMiniGame(MiniGameInteractable interactable) : base(interactable) {
         solution = new List<Sound>();
-        string[] sounds = {"Down", "Left", "Up", "Right"};
+        string[] sounds; 
+        string path = interactable.GetComponent<StudioEventEmitter>().EventReference.Path;
+        path = path.Replace("event:/UI/", "");
+        if (path[^1] == '2') 
+            sounds = new string[] {"Up", "Down", "Left", "Right"};
+        else
+            sounds = new string[] {"Down", "Left", "Up", "Right"};
         for (int i = 0; i < sounds.Length; i++) {
             solution.Add(new Sound("Puzzle_" + sounds[i], interactable.gameObject.GetComponent<StudioEventEmitter>()));
         }
         remainingSounds = new List<Sound>(solution);
-        sequenceSound = new Sound("Sequences/seq_UpDownLeftRight", interactable.gameObject.GetComponent<StudioEventEmitter>());
+        sequenceSound = new Sound(path, interactable.gameObject.GetComponent<StudioEventEmitter>());
 
     }
 

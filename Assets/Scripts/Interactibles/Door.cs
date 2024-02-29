@@ -20,6 +20,7 @@ public class Door : Interactable {
             StudioEventEmitter sound = gameObject.GetComponent<StudioEventEmitter>();
             sound.EventReference = FMODUnity.RuntimeManager.PathToEventReference("event:/Sound Effects/Locked Door/Door_Open");
             sound.Play();
+            gameObject.tag = "Untagged";
         }
         isOpen = true;
     }

@@ -215,7 +215,12 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Clue")) {
         Debug.Log("Collided with " + other.gameObject.name);
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Move/Wall_Hit");
+            if (other.gameObject.CompareTag("Clue")) {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Move/Door_Hit");
+            }
+            else {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Move/Wall_Hit");
+            }
             movement = -movement;
             movementTarget = initialMovement;
             transform.position = new Vector3(movementTarget.x, transform.position.y, movementTarget.y);
