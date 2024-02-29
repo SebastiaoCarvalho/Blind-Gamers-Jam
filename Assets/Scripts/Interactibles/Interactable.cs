@@ -22,7 +22,9 @@ public class Interactable : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.layer == 0) return; // Bugs with some default layer objects
         Debug.Log(player.GetComponent<Player>());
+        Debug.Log(other.gameObject.layer);
         player.GetComponent<Player>().AddInteractible(gameObject);
     }
 

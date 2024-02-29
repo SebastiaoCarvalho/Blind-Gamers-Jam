@@ -13,6 +13,10 @@ public class MiniGame {
 
     }
 
+    public virtual bool IsFinished() {
+        return true;
+    }
+
     protected void EndGame() {
         interactable.EndGame();
     }
@@ -20,5 +24,10 @@ public class MiniGame {
     protected void WinGame() {
         Debug.Log("Winning game");
         interactable.WinGame();
+    }
+
+    protected void LoseGame() {
+        Debug.Log("Losing game");
+        EndGame();
     }
 }

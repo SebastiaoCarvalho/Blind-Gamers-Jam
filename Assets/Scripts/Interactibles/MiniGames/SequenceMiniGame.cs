@@ -1,41 +1,44 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FMODUnity;
 using UnityEngine;
 
 public class SequenceMiniGame : MiniGame {
     private List<Sound> solution;
+    private Sound sequenceSound;
     private List<Sound> remainingSounds;
-    private float delay_time;
 
     public SequenceMiniGame(MiniGameInteractable interactable) : base(interactable) {
         solution = new List<Sound>();
-        int sequenceLength = 4;
-        string[] sounds = {"A", "B", "C", "D"};
-        for (int i = 0; i < sequenceLength; i++) {
-            string sound = sounds[Random.Range(0, sounds.Length)];
-            solution.Add(new Sound(sound, interactable.gameObject.GetComponent<AudioSource>()));
+        string[] sounds; 
+        string path = interactable.GetComponent<StudioEventEmitter>().EventReference.Path;
+        path = path.Replace("event:/UI/", "");
+        if (path[^1] == '2') 
+            sounds = new string[] {"Up", "Down", "Left", "Right"};
+        else
+            sounds = new string[] {"Down", "Left", "Up", "Right"};
+        for (int i = 0; i < sounds.Length; i++) {
+            solution.Add(new Sound("Puzzle_" + sounds[i], interactable.gameObject.GetComponent<StudioEventEmitter>()));
         }
         remainingSounds = new List<Sound>(solution);
+        sequenceSound = new Sound(path, interactable.gameObject.GetComponent<StudioEventEmitter>());
 
     }
 
-    public override async void Play()
+    public override void Play()
     {
-        delay_time = 0;
-        foreach (Sound sound in solution) {
-            Debug.Log("Playing sound: " + sound.SoundName);
-        }
-        foreach (Sound sound in solution) {
-            await Task.Delay((int) (delay_time * 1000)); // delay_time is in seconds
-            Debug.Log("Playing sound: " + sound.SoundName);
-            PlayAudio(sound);
-        }
+        Debug.Log("Playing sequence minigame");
+        PlayAudio(sequenceSound);
+    }
+
+    public override bool IsFinished()
+    {
+        return remainingSounds.Count == 0;
     }
 
     void PlayAudio(Sound sound)
     {     
         sound.Play();
-        delay_time = sound.GetLength() + .5f; //1 second is added to cater for the loading delay          
     }
 
     public bool TrySound(Sound sound) {
@@ -46,8 +49,8 @@ public class SequenceMiniGame : MiniGame {
             }
             return true;
         }
+        LoseGame();
         remainingSounds = new List<Sound>(solution);
-        EndGame();
         return false;
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2999348669816963489}
   - component: {fileID: 3613251275863445599}
   - component: {fileID: 8126951292039831242}
+  - component: {fileID: 3251017448047690707}
   m_Layer: 0
   m_Name: Door
   m_TagString: Clue
@@ -168,3 +169,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a276315e3132a42aaeecbbf4f20300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3251017448047690707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381052945158821703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
