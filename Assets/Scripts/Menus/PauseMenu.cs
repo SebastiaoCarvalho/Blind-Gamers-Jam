@@ -4,18 +4,10 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour {
+public class PauseMenu : Menu {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public InputActionReference pauseAction;
-
-    public Button[] buttons;
-
-    private int selectedButton = 0;
-
-    /* void Start() {
-        buttons[selectedButton].Select();
-    } */
 
     // Update is called once per frame
     void Update() {
@@ -30,12 +22,16 @@ public class PauseMenu : MonoBehaviour {
 
     void Resume() {
         pauseMenuUI.SetActive(false);
+        PlayerInput playerInput = GameObject.Find("PlayerInput").GetComponent<PlayerInput>();
+        playerInput.SwitchCurrentActionMap("PlayerActions");
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
     void Pause() {
         pauseMenuUI.SetActive(true);
+        PlayerInput playerInput = GameObject.Find("PlayerInput").GetComponent<PlayerInput>();
+        playerInput.SwitchCurrentActionMap("MainMenu");
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
@@ -47,5 +43,10 @@ public class PauseMenu : MonoBehaviour {
     public void QuitButton() {
         Resume();
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public override void Escape()
+    {
+        Resume();
     }
 }

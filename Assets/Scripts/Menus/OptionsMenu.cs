@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OptionsMenu : MonoBehaviour
+public class OptionsMenu : Menu
 {
     public GameObject soundMenuUI;
     public GameObject controlsMenuUI;
@@ -15,6 +15,8 @@ public class OptionsMenu : MonoBehaviour
         foreach (Slider slider in sliders) {
             slider.onValueChanged.AddListener(delegate {SliderChange(slider);});
         }
+        
+        
     }
 
     public void SoundButton() {
