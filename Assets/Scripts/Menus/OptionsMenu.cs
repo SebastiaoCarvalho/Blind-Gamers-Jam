@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OptionsMenu : Menu
@@ -15,8 +16,6 @@ public class OptionsMenu : Menu
         foreach (Slider slider in sliders) {
             slider.onValueChanged.AddListener(delegate {SliderChange(slider);});
         }
-        
-        
     }
 
     public void SoundButton() {
@@ -27,6 +26,12 @@ public class OptionsMenu : Menu
     public void ControlsButton() {
         soundMenuUI.SetActive(false);
         controlsMenuUI.SetActive(true);
+    }
+
+    public void BackButton() {
+        soundMenuUI.SetActive(false);
+        controlsMenuUI.SetActive(false);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void SliderChange(Slider slider) {

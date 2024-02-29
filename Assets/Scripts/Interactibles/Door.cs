@@ -11,14 +11,14 @@ public class Door : Interactable {
         if (locks.Count > 0) {
             Debug.Log("Door is locked");
             StudioEventEmitter sound = gameObject.GetComponent<StudioEventEmitter>();
-            sound.EventReference = EventReference.Find("event:/Sound Effects/Locked Door/Door_Locked");
+            sound.EventReference = FMODUnity.RuntimeManager.PathToEventReference("event:/Sound Effects/Locked Door/Door_Locked");
             sound.Play();
             return;
         }
         if (! isOpen) { // open door
             gameObject.GetComponent<Rigidbody>().detectCollisions = false;
             StudioEventEmitter sound = gameObject.GetComponent<StudioEventEmitter>();
-            sound.EventReference = EventReference.Find("event:/Sound Effects/Locked Door/Door_Open");
+            sound.EventReference = FMODUnity.RuntimeManager.PathToEventReference("event:/Sound Effects/Locked Door/Door_Open");
             sound.Play();
         }
         isOpen = true;

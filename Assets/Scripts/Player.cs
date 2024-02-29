@@ -95,7 +95,6 @@ public class Player : MonoBehaviour
             movement2D.Normalize();
             
             rb.velocity = new Vector3(movement2D.x  * speed, rb.velocity.y, movement2D.y * speed);
-            // transform.position = Vector3.MoveTowards(transform.position, new Vector3(movementTarget.x, transform.position.y, movementTarget.y), speed * Time.fixedDeltaTime);
         }
         
     }
