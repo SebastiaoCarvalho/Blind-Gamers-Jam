@@ -8,7 +8,7 @@ public class Menu : MonoBehaviour {
 
     public InputActionReference upAction, downAction, enterAction, escapeAction;
 
-    void Start()
+    protected virtual void Start()
     {
         buttons[selectedButton].Select();
         upAction.action.performed += _ => Up();
@@ -18,6 +18,7 @@ public class Menu : MonoBehaviour {
     }
 
     public void Up() {
+        Debug.Log("Up");
         buttons[selectedButton].OnDeselect(null);
         selectedButton = (selectedButton -1 + buttons.Length) % buttons.Length;
         buttons[selectedButton].Select();

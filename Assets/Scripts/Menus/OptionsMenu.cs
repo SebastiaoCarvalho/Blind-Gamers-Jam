@@ -13,6 +13,7 @@ public class OptionsMenu : Menu
     public Slider[] sliders;
     
     void Start() {
+        base.Start();
         foreach (Slider slider in sliders) {
             slider.onValueChanged.AddListener(delegate {SliderChange(slider);});
         }

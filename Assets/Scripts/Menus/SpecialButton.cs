@@ -10,6 +10,6 @@ public class SpecialButton : MonoBehaviour, ISelectHandler
     {
         textName = textName != "" ? textName : gameObject.name;
         Debug.Log("Selected " + textName);
-        FMODUnity.RuntimeManager.PlayOneShot("event:/TTS/" + textName);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/TTS/Menu/" + textName);
     }
 }
