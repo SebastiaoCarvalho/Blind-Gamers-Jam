@@ -18,6 +18,7 @@ public class Sound {
 
     public void Play() {
         source.EventInstance.release();
+        Debug.Log("Playing sound " + sound);
         source.EventReference = FMODUnity.RuntimeManager.PathToEventReference(eventName);
         source.Play();
     }
